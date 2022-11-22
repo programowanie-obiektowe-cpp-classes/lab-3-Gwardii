@@ -11,7 +11,7 @@ unsigned int transportujFlota(unsigned int towar)
     while (transported_towar < towar) {
 
         Statek* statek = stocznia();
-        no_zaglowce += dynamic_cast< Zaglowiec* >(statek) == nullptr;
+        no_zaglowce += dynamic_cast< Zaglowiec* >(statek) != nullptr;
         transported_towar += statek->transportuj();
         delete statek;
     }
